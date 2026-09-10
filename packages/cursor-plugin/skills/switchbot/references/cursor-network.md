@@ -20,7 +20,7 @@ already launches via `npx`. Reload Cursor (MCP: Restart Servers) after enabling 
 
 1. **Node.js:** `node -v` — should be 18 or later
 2. **CLI via npx:** `npx -y @switchbot/openapi-cli --version` — should print `3.7.1` or later
-3. **Credentials:** plugin variables `SWITCHBOT_TOKEN` and `SWITCHBOT_SECRET` (Cursor prompts on enable)
+3. **Credentials:** plugin variables `SWITCHBOT_OPENAPI_TOKEN` and `SWITCHBOT_OPENAPI_SECRET` (Cursor prompts on enable; mapped to `SWITCHBOT_TOKEN` / `SWITCHBOT_SECRET` for the CLI)
 4. **Network:** outbound HTTPS to `api.switch-bot.com` must be allowed
 
 If credentials are missing, re-enter them in **Cursor Settings → Plugins → SwitchBot**, or:

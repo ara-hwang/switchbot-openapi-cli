@@ -37,7 +37,7 @@ The plugin packages use different setup strategies — this is intentional:
 | --- | --- | --- |
 | `packages/claude-code-plugin` | `node ../bin/auth.js` (relative path) | Claude Code installs the full npm package; `bin/` is always adjacent. |
 | `packages/codex-plugin` | Explicit `switchbot codex setup` | Codex does not expose an install-time hook event. Its hook config accepts lifecycle hooks under `hooks`, but rejects a top-level `onInstall` field. |
-| `packages/cursor-plugin` | Cursor plugin `variables` (token + secret) | Cursor has no `onInstall` hook like Claude Code. Credentials are collected when the plugin is enabled and injected into MCP env. The package is Git-only (`private: true`), not published to npm. |
+| `packages/cursor-plugin` | Cursor plugin `variables` (`SWITCHBOT_OPENAPI_TOKEN` / `SWITCHBOT_OPENAPI_SECRET` → MCP `SWITCHBOT_TOKEN` / `SWITCHBOT_SECRET`) | Cursor has no `onInstall` hook like Claude Code. Credentials are collected when the plugin is enabled and injected into MCP env. Plugin variable names must differ from MCP env keys so `${VAR}` substitution works. The package is Git-only (`private: true`), not published to npm. |
 
 Keep the Claude Code relative hook unless its full-package installation layout
 changes. Keep the Codex plugin manifests hook-free until Codex exposes a

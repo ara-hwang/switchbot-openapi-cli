@@ -15,7 +15,7 @@ When you enable the plugin, Cursor asks for two secrets:
 1. **SwitchBot Open API token**
 2. **SwitchBot Open API secret**
 
-Get them in the SwitchBot app: Profile → Preferences → tap **App Version** 10 times → **Developer Options**. Cursor stores them as plugin variables and injects `SWITCHBOT_TOKEN` / `SWITCHBOT_SECRET` into the MCP process.
+Get them in the SwitchBot app: Profile → Preferences → tap **App Version** 10 times → **Developer Options**. Cursor stores them as plugin variables (`SWITCHBOT_OPENAPI_TOKEN` / `SWITCHBOT_OPENAPI_SECRET`) and injects them into the MCP process as `SWITCHBOT_TOKEN` / `SWITCHBOT_SECRET`.
 
 ## Installation (local, from this repo)
 
@@ -68,7 +68,7 @@ To expose admin tools, change `mcp.json` args to `["-y", "@switchbot/openapi-cli
 
 ### MCP
 
-`mcp.json` starts `npx -y @switchbot/openapi-cli mcp serve` (default 17-tool profile). Token and secret come from plugin `variables` — they are not committed.
+`mcp.json` starts `npx -y @switchbot/openapi-cli mcp serve` (default 17-tool profile). Token and secret come from plugin `variables` (`${SWITCHBOT_OPENAPI_TOKEN}` / `${SWITCHBOT_OPENAPI_SECRET}`) — they are not committed.
 
 ## Typical flow
 

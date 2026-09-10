@@ -4,8 +4,8 @@
       "command": "npx",
       "args": ["-y", "@switchbot/openapi-cli", "mcp", "serve"],
       "env": {
-        "SWITCHBOT_TOKEN": "${SWITCHBOT_TOKEN}",
-        "SWITCHBOT_SECRET": "${SWITCHBOT_SECRET}"
+        "SWITCHBOT_TOKEN": "${SWITCHBOT_OPENAPI_TOKEN}",
+        "SWITCHBOT_SECRET": "${SWITCHBOT_OPENAPI_SECRET}"
       }
     }
   }
