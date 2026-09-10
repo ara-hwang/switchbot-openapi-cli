@@ -1,7 +1,7 @@
 {
   "name": "@switchbot/cursor-plugin",
   "private": true,
-  "version": "0.1.2",
+  "version": "0.1.3",
   "type": "module",
   "description": "SwitchBot Cursor plugin — MCP server, skill, safety rule, and slash commands (not published to npm; load from Git or ~/.cursor/plugins/local)",
   "homepage": "https://github.com/OpenWonderLabs/switchbot-openapi-cli/tree/main/packages/cursor-plugin",

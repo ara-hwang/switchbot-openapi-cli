@@ -1,7 +1,7 @@
 {
   "name": "switchbot",
   "displayName": "SwitchBot",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "minClientVersions": {
     "cursor": "3.13.0"
   },
@@ -19,18 +19,18 @@
   "variables": {
     "type": "object",
     "properties": {
-      "SWITCHBOT_TOKEN": {
+      "SWITCHBOT_OPENAPI_TOKEN": {
         "type": "string",
         "title": "SwitchBot Open API token",
         "description": "From the SwitchBot app: Profile → Preferences → tap App Version 10 times → Developer Options → Token. Required for the MCP server."
       },
-      "SWITCHBOT_SECRET": {
+      "SWITCHBOT_OPENAPI_SECRET": {
         "type": "string",
         "title": "SwitchBot Open API secret",
         "description": "Shown next to the token in Developer Options (Secret Key). If you already ran `switchbot auth login`, you can copy both from the CLI keychain/config instead of the app."
       }
     },
-    "required": ["SWITCHBOT_TOKEN", "SWITCHBOT_SECRET"]
+    "required": ["SWITCHBOT_OPENAPI_TOKEN", "SWITCHBOT_OPENAPI_SECRET"]
   },
   "skills": "./skills/",
   "rules": "./rules/",

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+- Fix Cursor plugin variable substitution: map `SWITCHBOT_OPENAPI_TOKEN` / `SWITCHBOT_OPENAPI_SECRET` plugin variables to `SWITCHBOT_TOKEN` / `SWITCHBOT_SECRET` MCP env keys (avoids self-referential `${SWITCHBOT_TOKEN}` placeholders that Cursor did not interpolate).
+
 ## 0.1.2
 
 - Prompt for SwitchBot Open API token and secret when enabling the plugin (`variables`), and pass them to MCP as `SWITCHBOT_TOKEN` / `SWITCHBOT_SECRET`.

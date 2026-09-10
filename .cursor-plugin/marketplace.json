@@ -12,7 +12,7 @@
       "name": "switchbot",
       "source": "./packages/cursor-plugin",
       "description": "Control SwitchBot smart-home devices and scenes from Cursor via the SwitchBot CLI MCP server.",
-      "version": "0.1.2",
+      "version": "0.1.3",
       "author": {
         "name": "OpenWonderLabs"
       },

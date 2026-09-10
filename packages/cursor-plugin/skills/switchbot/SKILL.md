@@ -120,7 +120,7 @@ Always use `--json` when parsing output. Use `--format=markdown` for user-facing
 
 ## Credentials
 
-Prefer credentials the user already entered as Cursor plugin variables (`SWITCHBOT_TOKEN` / `SWITCHBOT_SECRET` injected into MCP). Do not ask the user to paste token or secret in chat.
+Prefer credentials the user already entered as Cursor plugin variables (`SWITCHBOT_OPENAPI_TOKEN` / `SWITCHBOT_OPENAPI_SECRET`, injected into MCP as `SWITCHBOT_TOKEN` / `SWITCHBOT_SECRET`). Do not ask the user to paste token or secret in chat.
 
 If MCP auth fails and variables are empty, tell them to open **Cursor Settings → Plugins → SwitchBot** and fill token + secret (SwitchBot app: Profile → Preferences → tap App Version 10 times → Developer Options). Optional CLI path: `npx -y @switchbot/openapi-cli auth login` (opens browser). Never run `auth login` or `auth keychain set` on the user's behalf.
 
