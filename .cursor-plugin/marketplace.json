@@ -1,0 +1,26 @@
+{
+  "name": "switchbot",
+  "owner": {
+    "name": "OpenWonderLabs",
+    "email": "developer@wondertechlabs.com"
+  },
+  "metadata": {
+    "description": "SwitchBot smart-home plugin for Cursor — MCP server with skill, safety rule, and slash commands"
+  },
+  "plugins": [
+    {
+      "name": "switchbot",
+      "source": "./packages/cursor-plugin",
+      "description": "Control SwitchBot smart-home devices and scenes from Cursor via the SwitchBot CLI MCP server.",
+      "version": "0.1.2",
+      "author": {
+        "name": "OpenWonderLabs"
+      },
+      "homepage": "https://github.com/OpenWonderLabs/switchbot-openapi-cli/tree/main/packages/cursor-plugin",
+      "license": "MIT",
+      "keywords": ["switchbot", "smart-home", "iot", "mcp", "cursor"],
+      "category": "integrations",
+      "tags": ["switchbot", "smart-home", "mcp"]
+    }
+  ]
+}

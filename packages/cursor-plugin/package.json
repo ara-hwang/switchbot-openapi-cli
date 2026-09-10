@@ -1,0 +1,30 @@
+{
+  "name": "@switchbot/cursor-plugin",
+  "private": true,
+  "version": "0.1.2",
+  "type": "module",
+  "description": "SwitchBot Cursor plugin — MCP server, skill, safety rule, and slash commands (not published to npm; load from Git or ~/.cursor/plugins/local)",
+  "homepage": "https://github.com/OpenWonderLabs/switchbot-openapi-cli/tree/main/packages/cursor-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenWonderLabs/switchbot-openapi-cli.git",
+    "directory": "packages/cursor-plugin"
+  },
+  "bugs": "https://github.com/OpenWonderLabs/switchbot-openapi-cli/issues",
+  "license": "MIT",
+  "keywords": ["cursor", "switchbot", "smart-home", "iot", "mcp"],
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "@switchbot/openapi-cli": ">=3.7.1"
+  },
+  "peerDependenciesMeta": {
+    "@switchbot/openapi-cli": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}

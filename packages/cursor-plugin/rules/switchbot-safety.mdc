@@ -1,0 +1,15 @@
+---
+description: Safety gates for SwitchBot device control — never guess IDs, never skip destructive confirmation, never ask for tokens.
+alwaysApply: true
+---
+
+# SwitchBot safety
+
+- Never guess `deviceId`, commands, or parameter values. Query MCP or `switchbot ... --json` for ground truth.
+- Resolve names alias → exact → prefix → substring → fuzzy. Multiple matches at the same tier: stop and ask. Never pick silently.
+- `destructive` actions (lock, unlock, delete scenes/webhooks): refuse by default. Confirm explicitly; prefer `--dry-run` first. Never retry destructive automatically.
+- Do not ask the user for their SwitchBot token or secret. Do not run `auth login` or `auth keychain set` on their behalf.
+- Do not suggest `--skip-confirmation` or `--force` unless the user named those flags.
+- IR is open-loop: say the signal was sent. Do not claim the appliance succeeded.
+- Do not write `policy.yaml` without showing a diff and getting explicit approval.
+- Automation rules: never put a destructive command in `then[]`. First author stays `dry_run: true`. Do not set `automation.enabled: true` without telling the user.

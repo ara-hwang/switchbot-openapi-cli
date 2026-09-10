@@ -31,12 +31,13 @@ change (even in a patch version).
 
 ## Plugin setup strategies
 
-The two plugin packages use different setup strategies — this is intentional:
+The plugin packages use different setup strategies — this is intentional:
 
 | Package | Setup strategy | Reason |
 | --- | --- | --- |
 | `packages/claude-code-plugin` | `node ../bin/auth.js` (relative path) | Claude Code installs the full npm package; `bin/` is always adjacent. |
 | `packages/codex-plugin` | Explicit `switchbot codex setup` | Codex does not expose an install-time hook event. Its hook config accepts lifecycle hooks under `hooks`, but rejects a top-level `onInstall` field. |
+| `packages/cursor-plugin` | Cursor plugin `variables` (token + secret) | Cursor has no `onInstall` hook like Claude Code. Credentials are collected when the plugin is enabled and injected into MCP env. The package is Git-only (`private: true`), not published to npm. |
 
 Keep the Claude Code relative hook unless its full-package installation layout
 changes. Keep the Codex plugin manifests hook-free until Codex exposes a

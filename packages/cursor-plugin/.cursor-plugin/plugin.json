@@ -1,0 +1,39 @@
+{
+  "name": "switchbot",
+  "displayName": "SwitchBot",
+  "version": "0.1.2",
+  "minClientVersions": {
+    "cursor": "3.13.0"
+  },
+  "description": "Control SwitchBot smart-home devices and scenes from Cursor via the SwitchBot CLI MCP server.",
+  "author": {
+    "name": "OpenWonderLabs",
+    "email": "developer@wondertechlabs.com"
+  },
+  "homepage": "https://github.com/OpenWonderLabs/switchbot-openapi-cli/tree/main/packages/cursor-plugin",
+  "repository": "https://github.com/OpenWonderLabs/switchbot-openapi-cli",
+  "license": "MIT",
+  "keywords": ["switchbot", "smart-home", "iot", "mcp", "cursor"],
+  "category": "integrations",
+  "tags": ["switchbot", "smart-home", "mcp"],
+  "variables": {
+    "type": "object",
+    "properties": {
+      "SWITCHBOT_TOKEN": {
+        "type": "string",
+        "title": "SwitchBot Open API token",
+        "description": "From the SwitchBot app: Profile → Preferences → tap App Version 10 times → Developer Options → Token. Required for the MCP server."
+      },
+      "SWITCHBOT_SECRET": {
+        "type": "string",
+        "title": "SwitchBot Open API secret",
+        "description": "Shown next to the token in Developer Options (Secret Key). If you already ran `switchbot auth login`, you can copy both from the CLI keychain/config instead of the app."
+      }
+    },
+    "required": ["SWITCHBOT_TOKEN", "SWITCHBOT_SECRET"]
+  },
+  "skills": "./skills/",
+  "rules": "./rules/",
+  "commands": "./commands/",
+  "mcpServers": "./mcp.json"
+}

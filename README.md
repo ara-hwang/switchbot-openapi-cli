@@ -144,7 +144,32 @@ The optional skill package [`@switchbot/claude-code-plugin`](https://www.npmjs.c
 /plugin install switchbot@switchbot
 ```
 
-**Note:** The root `marketplace.json` in this repo is for Codex CLI Route B (git sparse clone) and points to `packages/codex-plugin/plugins/switchbot`. The `.claude-plugin/marketplace.json` is for Claude Code Plugin Marketplace and points to `packages/claude-code-plugin/plugins/switchbot`.
+**Note:** The root `marketplace.json` in this repo is for Codex CLI Route B (git sparse clone) and points to `packages/codex-plugin/plugins/switchbot`. The `.claude-plugin/marketplace.json` is for Claude Code Plugin Marketplace and points to `packages/claude-code-plugin/plugins/switchbot`. The `.cursor-plugin/marketplace.json` is for Cursor and points to `packages/cursor-plugin`.
+
+---
+
+## Cursor integration
+
+The Cursor plugin lives in [`packages/cursor-plugin/`](./packages/cursor-plugin/). It is **not** an npm package. Cursor loads it from Git or from `~/.cursor/plugins/local/switchbot/`.
+
+**Local load from a clone:**
+
+```bash
+mkdir -p ~/.cursor/plugins/local
+ln -sfn "$(pwd)/packages/cursor-plugin" ~/.cursor/plugins/local/switchbot
+```
+
+On Windows PowerShell:
+
+```powershell
+$src = (Resolve-Path ".\packages\cursor-plugin").Path
+$dst = Join-Path $env:USERPROFILE ".cursor\plugins\local\switchbot"
+New-Item -ItemType Directory -Force -Path (Split-Path $dst) | Out-Null
+if (Test-Path $dst) { Remove-Item $dst -Recurse -Force }
+cmd.exe /c mklink /J "$dst" "$src"
+```
+
+Reload Cursor, then enter SwitchBot Open API token and secret when prompted (app: Profile → Preferences → tap App Version 10 times → Developer Options).
 
 ---
 
